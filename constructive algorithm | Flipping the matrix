@@ -1,0 +1,1 @@
+print(*(lambda f: ((lambda n: (lambda t: sum(map(max, f(t[-1:-n-1:-1]), f(t[:n]))))(tuple((lambda s: tuple(map(max, s[-1:-n-1:-1], s[:n]))) (tuple(map(int, input().split()))) for _ in range(n << 1))))(int(input())) for _ in range(int(input()))))(__import__("itertools").chain.from_iterable), sep="\n")
