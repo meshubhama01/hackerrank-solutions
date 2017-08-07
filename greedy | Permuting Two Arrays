@@ -1,0 +1,10 @@
+for t in range(int(input())):
+    n, k = [int(v) for v in input().split()]
+    a = sorted([int(v) for v in input().split()])
+    b = sorted([int(v) for v in input().split()], reverse=True)
+    isValid = True
+    for i in range(n):
+        if (a[i] + b[i]) < k:
+            isValid = False
+            break
+    print('YES') if isValid else print('NO')
