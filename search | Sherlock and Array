@@ -1,0 +1,48 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    Scanner sc=new Scanner(System.in);
+    int t=sc.nextInt();
+    for(int i=0;i<t;i++){
+        ArrayList<Integer> array=new ArrayList<Integer>();
+        int n=sc.nextInt();
+        for(int j=0;j<n;j++){
+            array.add(sc.nextInt());
+        }
+        System.out.println(equilibrium(array));
+    }
+
+}
+private static String equilibrium(ArrayList<Integer> al){
+    int sum=0;
+    for(Integer i: al){
+        sum+=(int)i;
+    }
+    int lsum=0;
+    int rsum=sum;
+    String found="";
+    for(int i=0;i<al.size();i++){
+        lsum=sum-rsum;
+        rsum=rsum-al.get(i);
+        if(lsum==rsum){
+            found="YES";
+            break;
+        }
+        else{
+            continue;
+        }
+    }
+    if(found=="YES"){
+        return "YES";
+    }
+    else return "NO";
+}
+}
+
