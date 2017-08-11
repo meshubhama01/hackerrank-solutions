@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main()
+{ char s[100000]; 
+ int a[26],i,run=1,count=0,val;
+ scanf("%s",s);
+ for(i=0;i<26;i++)
+ {
+     a[i]=0;
+ } 
+ i=0; 
+ while(s[i]!='\0') {
+     if(s[i]>='a'&&s[i]<='z')
+     {
+         a[s[i]-'a']++;
+     }
+     i++; 
+       }
+ for(i=0;i<26;i++)
+ {
+     if(a[i]>0) 
+     { 
+         if(run==1) 
+         { 
+             val=a[i];
+          run++;
+         } 
+         else if(a[i]!=val) 
+         { count++; 
+         }
+         } 
+         } 
+         if(count<=1) {
+         printf("YES"); 
+         }
+         else { 
+         printf("NO"); 
+         }
+return 0;
+}
