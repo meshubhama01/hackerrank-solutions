@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int main() { long long int i; 
+            long long int array[1000010]={0};
+            long long int n; 
+            scanf("%lld",&n);
+            long long int a[n];
+            for(i=0;i<n;i++)
+                {
+                scanf("%lld",&a[i]);
+                array[a[i]]=array[a[i]]-1; 
+            }
+long long int m;
+scanf("%lld",&m);
+long long int b[m];
+for(i=0;i<m;i++)
+    {
+    scanf("%lld",&b[i]); 
+    array[b[i]]=array[b[i]]+1;
+}
+for(i=0;i<1000010;i++) { 
+    if(array[i]>0)
+        printf("%lld ",i);
+}
+return 0;
+}  
+    
+    
+    
+    
