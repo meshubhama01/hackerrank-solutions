@@ -1,1 +1,0 @@
-print((lambda n: (lambda k, s: min(map(lambda x, y: x - y, s[k - 1:], s)))(int(input()), sorted(map(int, (input() for _ in range(n))))))(int(input())))
