@@ -1,0 +1,44 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int main(){
+    int t; 
+    scanf("%d",&t);
+    for(int a0 = 0; a0 < t; a0++){
+        int n; 
+        int c; 
+        int m; 
+        scanf("%d %d %d",&n,&c,&m);
+        
+        int chocs,wraps,final;
+        
+        chocs = n/c;
+        wraps =chocs;
+        final = chocs;
+        while(1)
+        {
+           if(wraps- m >=0)
+           {
+               final = final+1;
+               wraps= wraps-m +1;  
+           }
+               
+          if(wraps-m <0)
+           {
+               break;
+           }  
+            
+        }
+        
+        printf("%d\n",final);
+        
+        
+        
+    }
+    return 0;
+}
