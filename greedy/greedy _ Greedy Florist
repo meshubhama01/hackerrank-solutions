@@ -1,0 +1,13 @@
+n, k = map(int, input().strip().split(' '))
+costs = reversed(sorted(list(map(int, input().strip().split(' '))))[0:n])
+
+answer = 0
+multiplier = 1
+active_person = k
+for cost in costs:
+    answer += (cost * multiplier)
+    active_person -= 1
+    if active_person == 0:
+        active_person = k
+        multiplier += 1
+print(answer)
