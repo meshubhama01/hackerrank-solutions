@@ -1,0 +1,61 @@
+//Code in C
+
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+  
+        long long int p,q;
+        
+       int c=0;
+    float ri;
+    float left;
+    cin >>p>>q;
+    
+    for(int i=p; i <=q; i++)
+    {
+         long long int num = i;
+         int d =0;
+         while (num  > 0)
+           {
+        
+            num = num / 10;
+        
+            d++;
+           }
+        
+    long long  int square =pow(i,2);
+        
+        int power = (pow(10,d));
+        
+         int z =  (square) % power ;
+            
+        ri =z;
+               
+                 int g = d;
+        left =square/pow(10,d);
+                 
+      
+        int f = left+ri;
+  
+   if(i==f)
+   {
+       cout<<i<<" ";
+       c++;
+   }
+     
+    }
+   
+ if(c ==0)
+ {
+     cout<<"INVALID RANGE";
+ }
+       
+    return 0;
+}

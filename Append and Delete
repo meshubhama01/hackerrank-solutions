@@ -1,0 +1,22 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+    int k; string s,r;
+   cin>>s>>r>>k;
+    
+int m = 0;
+
+for(m = 0; s[m] == r[m]; m++);
+    int L = s.size() + r.size();
+
+  cout << (L <= k + m*2 && L%2 == k%2 || L < k ? "Yes" : "No");
+   
+    
+    return 0;
+}
