@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+
+
+int main() {
+
+    int t;
+    float a,b,p,q;
+    scanf("%d",&t);
+    while(t--)
+        {
+        scanf("%f %f",&a,&b);
+        p=ceil(sqrt(a));
+        q=floor(sqrt(b));
+        
+        int z=q-p+1;
+        
+        printf("%d\n",z);
+    }
+    return 0;
+}
+        

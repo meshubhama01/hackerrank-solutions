@@ -1,0 +1,62 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+class Solution {
+
+   
+
+    static void Main(String[] args) {
+        string[] tokens_s = Console.ReadLine().Split();
+        int s = int.Parse(tokens_s[0]);
+        int n = int.Parse(tokens_s[1]);
+        int m = int.Parse(tokens_s[2]);
+        
+        string[] key = Console.ReadLine().Split();
+        int[] keyb = Array.ConvertAll(key,int.Parse);
+        string[] drive = Console.ReadLine().Split();
+        int[] usb = Array.ConvertAll(drive,int.Parse);
+       
+        
+          int [] arr = new int[m*n];
+        int e=0;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<m;j++)
+            {
+               arr[e]= keyb [i]+ usb[j]; 
+                e++;
+            }
+        }
+            
+        int [] brr = new int[m*n];
+        for(int q=0;q<m*n;q++)
+        {
+            brr[q] = s-arr[q];
+        }
+        
+        int ch = 100000000,p=0;
+        
+        for(int i=0;i<m*n;i++)
+        {
+            if(brr[i]>=0)
+            {
+                if(brr[i]<ch)
+                {
+                    ch = brr[i];
+                    p=i;
+                }
+            }
+        }
+        
+        if(ch==100000000)
+        {
+            Console.WriteLine("-1");
+        }
+        
+        if(ch != 100000000)
+        {
+            Console.WriteLine("{0}",arr[p]);
+        }
+    }
+}

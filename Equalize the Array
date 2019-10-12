@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    
+    int size;
+    
+    scanf("%d", &size);
+    
+  int arr[size],max1=0,max;
+   int cou[100]={0};    
+    for( int i=0;i<size;i++)
+    {
+        scanf("%d",&arr[i]);
+        cou[arr[i]]++; 
+        
+    }
+        
+    
+ for(int j=1;j<=100;j++){
+        if(cou[j]>max1){
+            max=j;
+           
+            max1=cou[j];
+        }
+    }
+
+        
+    int del=0;
+    for(int i=0; i<size; i++)
+    {
+        if(arr[i] != max)
+           del=del+1;
+    }
+    
+    printf("%d",del);
+    
+    return 0;
+}
